@@ -45,12 +45,12 @@ These instructions assume that you have:
 
 Open a new terminal window and follow the instructions below.
 
-1. Clone this repository and change directory:
+1. Clone this repository and change directory
    ```
    git clone https://github.com/WXSD-Sales/early-one-button-to-push && cd early-one-button-to-push
    ```
 
-2. Rename `.env.example` file to `.env` (you may also edit your database credentials within this renamed file):
+2. Rename `.env.example` file to `.env` (you may also edit your database credentials within this renamed file)
    ```
    mv .env.example .env
    ```
@@ -75,7 +75,7 @@ Open a new terminal window and follow the instructions below.
     - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` and `WEBEX_BOT_TOKEN` environment variables within the `.env` file respectively. 
     - You will also need to add this bot to all shared device that you wish to use. To do this, sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit API Access > Search for your bot and grant 'Full Access'.
 
-6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/8.x/sail):
+6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/8.x/sail)
    ```
    ./vendor/bin/sail up -d
    ```
