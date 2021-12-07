@@ -2,7 +2,7 @@ Early One Button to Push
 ========================
 **Customize the timing of OBTP on your shared Webex devices.**
 
-Conventionally, you can configure the OBTP to show at 0, 5, 10 or 15 minutes before the meeting time at an organizational level (via. Webex Control Hub settinga).
+Conventionally, you can configure the OBTP to show at 0, 5, 10 or 15 minutes before the meeting time at an organizational level (via. Webex Control Hub settings).
 However, this proof-of-concept application lets you set any custom value (in seconds) for the OBTP to appear, that too at a device level.
 The target audience for this PoC are individuals who want to have greater control over the timing of the OBTP.
 For example, those who would like to join a meeting on a Webex device more than 15 minutes ahead of the start time.
