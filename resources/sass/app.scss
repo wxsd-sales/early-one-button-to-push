@@ -1,0 +1,40 @@
+@import "../../node_modules/@momentum-ui/core/scss/settings/rem";
+@import "../../node_modules/@momentum-ui/core/scss/settings/media";
+@import "../../node_modules/@momentum-ui/core/scss/colors/settings";
+
+// Fonts
+@import "../../node_modules/@momentum-ui/core/scss/typography/settings";
+@import '../../node_modules/@mdi/font/scss/materialdesignicons';
+
+// Variables
+@import 'variables';
+
+// Frameworks
+@import '../../node_modules/bulma/bulma';
+@import '../../node_modules/buefy/src/scss/buefy';
+
+
+#app, #app > .columns {
+    min-height: 100vh;
+}
+
+#app.container.is-fluid {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+nav.navbar.is-fixed-top{
+    box-shadow: rgba(17, 17, 26, 0.1) 0 1px 0;
+}
+
+.table-wrapper.has-sticky-header {
+    padding-left: 0.7em;
+    padding-right: 0.7em;
+}
+
+.footer {
+    background-image: url(("/images/webex.svg"));
+    background-position: 97% 97%;
+    background-repeat: no-repeat;
+    background-size: 20%;
+}
