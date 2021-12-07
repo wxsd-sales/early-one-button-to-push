@@ -5,7 +5,7 @@
                 {{ $route.path.toLowerCase() === '/setup' ? 'Setup ' : '' }}Early One Button to Push
             </h1>
             <p class="subtitle">
-                Customize your shared Webex devices to show OBTP ahead of meeting time.
+                Customize the timing of OBTP on your shared Webex devices.
             </p>
         </div>
     </div>

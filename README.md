@@ -1,9 +1,11 @@
 Early One Button to Push
 ========================
-**Synchronize your Microsoft Azure AD groups to teams on Cisco Webex.**
+**Customize the timing of OBTP on your shared Webex devices.**
 
-This is a proof-of-concept application that can customize your shared Webex devices to show OBTP ahead of meeting time.
-The target audience for this PoC are individuals who want to have a greater control over the timing of the OBTP.
+Conventionally, you can configure the OBTP to show at 0, 5 or 15 minutes before the meeting time at an organizational level (via. Webex Control Hub).
+However, this proof-of-concept application lets you set any custom value (in seconds) for the OBTP to appear, that too at a device level.
+The target audience for this PoC are individuals who want to have greater control over the timing of the OBTP.
+For example, those who would like to join a meeting (on a Webex device) more than 15 minutes ahead of the start time.
 
 <!--
 <p align="center">
