@@ -75,28 +75,48 @@ Open a new terminal window and follow the instructions below.
     - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` and `WEBEX_BOT_TOKEN` environment variables within the `.env` file respectively. 
     - You will also need to add this bot to all shared device that you wish to use. To do this, sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit API Access > Search for your bot and grant 'Full Access'.
 
-6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/8.x/sail)
+5. Install Composer dependencies for the application.
+   ```
+   docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+   ```
+
+6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/8.x/sail):
    ```
    ./vendor/bin/sail up -d
    ```
 
-7. Run [Laravel Mix](https://laravel.com/docs/8.x/mix)  
+7. Initialize the database for the application.
+   ```
+   ./vendor/bin/sail php artisan migrate:fresh
+   ```
+
+8. Install NPM dependencies for the application.
+   ```
+   ./vendor/bin/sail npm install
+   ```
+
+9. Run [Laravel Mix](https://laravel.com/docs/8.x/mix)  
    When you run this command, the application's CSS and JavaScript assets will be compiled and placed in the application's public directory:
    ```
    ./vendor/bin/sail npm run dev
    ```
 
-8. Run the Scheduler locally  
-   This command will run in the foreground and invoke the scheduler every minute until you terminate the command. In a new terminal window:
-   ```
-   ./vendor/bin/sail php artisan schedule:work
-   ```
+10. Run the Scheduler locally  
+    This command will run in the foreground and invoke the scheduler every minute until you terminate the command. In a new terminal window:
+    ```
+    ./vendor/bin/sail php artisan schedule:work
+    ```
 
-9. Run the Queue Worker  
-   Start a queue worker and process new jobs as they are pushed onto the queue. This command will continue to run until it is manually stopped or you close your terminal. In a new terminal window:
-   ```
-   ./vendor/bin/sail php artisan queue:work
-   ```
+11. Run the Queue Worker  
+    Start a queue worker and process new jobs as they are pushed onto the queue. This command will continue to run until it is manually stopped or you close your terminal. In a new terminal window:
+    ```
+    ./vendor/bin/sail php artisan queue:work
+    ```
 
 Lastly, navigate to `http://localhost` in your browser to complete the setup (you will be asked to login to Azure) by mapping devices to calendar accounts.
 
