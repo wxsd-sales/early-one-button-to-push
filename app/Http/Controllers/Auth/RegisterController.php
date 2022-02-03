@@ -42,6 +42,7 @@ class RegisterController extends Controller
      * @var string[]
      */
     public static $azureScopes = ['.default', 'offline_access'];
+
     /**
      * Where to redirect users after registration.
      *

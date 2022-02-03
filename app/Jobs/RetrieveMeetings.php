@@ -79,7 +79,7 @@ class RetrieveMeetings implements ShouldQueue, ShouldBeUniqueUntilProcessing
                 $link = $response['@odata.nextLink'] ?? null;
                 $timestamp = Carbon::createFromFormat(DateTimeInterface::RFC7231, $date);
                 $upsert_meetings = array_filter($response['value'], function ($item) {
-                    return true; //TODO
+                    return array_key_exists('uniqueId', $item['location']);
                 });
                 $delete_meetings = array_filter($response['value'], function ($item) {
                     return false; //TODO

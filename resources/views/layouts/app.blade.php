@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="description" content="Customize your shared Webex devices to show OBTP ahead of meeting time.">
+    <meta name="description" content="{{ env('APP_DESCRIPTION') }}">
     <meta name="keywords" content="webex,azure,devices,xapi,obtp,meeting">
 
     <!-- CSRF Token -->

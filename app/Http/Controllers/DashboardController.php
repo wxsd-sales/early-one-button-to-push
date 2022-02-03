@@ -80,22 +80,22 @@ class DashboardController extends Controller
 
     public function postRemoveMapping(Request $request)
     {
-        $request->validate([
-            'deviceId' => ['required', 'string', 'exists:devices,id'],
-            'email' => ['required', 'string', 'email', 'max:255', 'exists:users'],
-        ]);
-
-        function upsertDevice(string $id)
-        {
-            return Device::where('id', $id)->update(['user_email' => null]);
-        }
-
-        function deleteUser(string $email)
-        {
-            return User::where('email', $email)->delete();
-        }
-
         try {
+            $request->validate([
+                'deviceId' => ['required', 'string', 'exists:devices,id'],
+                'email' => ['required', 'string', 'email', 'max:255', 'exists:users'],
+            ]);
+
+            function upsertDevice(string $id)
+            {
+                return Device::where('id', $id)->update(['user_email' => null]);
+            }
+
+            function deleteUser(string $email)
+            {
+                return User::where('email', $email)->delete();
+            }
+
             DB::transaction(function () use ($request) {
                 $device_count = Device::where('user_email', $request->get('email'))->count();
 

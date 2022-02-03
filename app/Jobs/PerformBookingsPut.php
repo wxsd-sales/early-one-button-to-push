@@ -69,7 +69,7 @@ class PerformBookingsPut implements ShouldQueue, ShouldBeUniqueUntilProcessing
             return [
                 'Id' => Str::of($meeting['id']),
                 'MeetingId' => Str::of($meeting['id']),
-                'Number' => Str::of($meeting['link'])->remove('@webex',)->trim(),
+                'Number' => Str::of($meeting['link'])->remove('@webex',)->trim(), //TODO
                 'Organizer' => [
                     'Name' => Arr::get($meeting, 'organizer.emailAddress.name', '')
                 ],

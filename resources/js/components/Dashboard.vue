@@ -10,13 +10,14 @@
                     <div class="column is-two-fifths">
                         <b-button
                             :loading="isSyncButtonLoading && !isTableLoading"
-                            :disabled="isTableLoading"
+                            :disabled="devices.length === 0 || isTableLoading"
                             size="is-medium"
                             label="Sync Now"
                             type="is-link"
                             class="is-rounded"
                             icon-right="sync"
                             expanded
+                            @click="performSync()"
                         />
                     </div>
                 </div>
@@ -157,6 +158,7 @@
                             type="is-link is-light"
                             class="is-rounded"
                             expanded
+                            @click="showAddMappingModal(props.row)"
                         />
                         <b-tooltip
                             v-if="props.row.userEmail"
@@ -248,16 +250,38 @@ export default {
         this.loadTable()
     },
     methods: {
-        showAddMappingModal () {
+        showAddMappingModal (deviceRow = null) {
             this.$buefy.modal.open({
                 parent: this,
+                props: {
+                    selectedDeviceId: deviceRow ? deviceRow.id : null
+                },
                 component: AddMappingModal,
                 hasModalCard: true,
                 trapFocus: true,
                 canCancel: true,
                 scroll: 'keep',
-                onCancel: this.loadTable,
-                onClose: this.loadTable
+                events: {
+                    close: (userEmail) => {
+                        if (userEmail) {
+                            this.$buefy.toast.open({
+                                duration: 5000,
+                                message: `Processed mapping for ${userEmail}`,
+                                position: 'is-top',
+                                type: 'is-success'
+                            })
+
+                            if (deviceRow) {
+                                deviceRow.userEmail = userEmail
+                            } else {
+                                this.loadTable()
+                            }
+                        } else {
+                            deviceRow.userEmail = null
+                            // TODO: Fix Initial table load
+                        }
+                    }
+                }
             })
         },
         loadTable () {

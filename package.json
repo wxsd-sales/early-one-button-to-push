@@ -11,30 +11,28 @@
     },
     "devDependencies": {
         "axios": "^0.21",
-        "browser-sync": "^2.27.5",
+        "browser-sync": "^2.27.7",
         "browser-sync-webpack-plugin": "^2.3.0",
         "eslint": "^7.32.0",
         "eslint-config-standard": "^16.0.3",
-        "eslint-plugin-import": "^2.24.2",
+        "eslint-plugin-import": "^2.24.4",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^5.1.0",
         "eslint-plugin-vue": "^7.18.0",
-        "eslint-webpack-plugin": "^3.0.1",
-        "laravel-mix": "^6.0.6",
+        "eslint-webpack-plugin": "^3.1.1",
+        "laravel-mix": "^6.0.41",
         "laravel-mix-eslint": "^0.2.0",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "resolve-url-loader": "^4.0.0",
-        "sass": "^1.42.1",
-        "sass-loader": "^12.1.0",
+        "sass": "^1.49.7",
+        "sass-loader": "^12.4.0",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.14"
     },
     "dependencies": {
-        "@mdi/font": "^6.1.95",
-        "@momentum-ui/core": "^19.15.15",
-        "buefy": "^0.9.10",
+        "@mdi/font": "^6.5.95",
+        "buefy": "^0.9.14",
         "bulma": "^0.9.3",
-        "vue": "^2.6.14",
-        "vue-router": "^3.5.2"
+        "vue": "^2.6.14"
     }
 }

@@ -19,7 +19,7 @@
                         placeholder="Select an available shared Webex device"
                         icon="desktop-classic"
                         size="is-medium"
-                        :disabled="isDisabled || devices.length === 0"
+                        :disabled="!!selectedDeviceId || isDisabled || devices.length === 0"
                         expanded
                         required
                         rounded
@@ -47,7 +47,7 @@
                         <b-button
                             icon-right="refresh"
                             size="is-medium"
-                            :disabled="isDisabled || isLoading"
+                            :disabled="!!selectedDeviceId || isDisabled || isLoading"
                             :loading="isLoading"
                             rounded
                             @click="listDevices(true)"
@@ -96,13 +96,18 @@
 <script>
 export default {
     name: 'AddMappingModal',
-    props: { canCancel: Boolean },
+    props: {
+        selectedDeviceId: {
+            type: String,
+            default: null
+        }
+    },
     data () {
         return {
             devices: [],
             email: null,
-            deviceId: null,
-            isDisabled: false,
+            deviceId: this.selectedDeviceId,
+            isDisabled: !!this.deviceId,
             isLoading: true,
             error: {
                 device: null,
@@ -138,9 +143,6 @@ export default {
                     console.error(error)
                     this.error.device = 'Could not retrieve devices.'
                 })
-                .finally(() => {
-                    console.info('Finished retrieving devices on the server.')
-                })
         },
         loadDevices () {
             window.axios.get('/devices')
@@ -154,6 +156,7 @@ export default {
                             mac: device.mac,
                             serial: device.serial,
                             primarySipUrl: device.primary_sip_url,
+                            syncedAt: device.synced_at,
                             createdAt: device.created_at,
                             updatedAt: device.updated_at
                         }
@@ -164,9 +167,6 @@ export default {
                 .catch(error => {
                     console.error(error)
                     this.error.device = 'Could not load devices.'
-                })
-                .finally(() => {
-                    console.info('Finished loading device list on client.')
                 })
         },
         addMapping () {
@@ -181,7 +181,7 @@ export default {
             })
                 .then(response => {
                     console.info(response.data)
-                    this.$emit('close')
+                    this.$emit('close', this.email)
                 })
                 .catch(error => {
                     console.error(error)
@@ -199,9 +199,13 @@ export default {
                 await this.retrieveDevices()
             }
             await this.loadDevices()
+
+            if (!this.selectedDeviceId) {
+                this.deviceId = null
+            }
+
             this.isDisabled = false
             this.isLoading = false
-            this.deviceId = null
         },
         filterDevices (primarySipUrl) {
             return this.devices.filter(device => device.userEmail === null &&

@@ -1,18 +1,11 @@
-@import "../../node_modules/@momentum-ui/core/scss/settings/rem";
-@import "../../node_modules/@momentum-ui/core/scss/settings/media";
-@import "../../node_modules/@momentum-ui/core/scss/colors/settings";
-
 // Fonts
-@import "../../node_modules/@momentum-ui/core/scss/typography/settings";
 @import '../../node_modules/@mdi/font/scss/materialdesignicons';
 
 // Variables
 @import 'variables';
 
-// Frameworks
 @import '../../node_modules/bulma/bulma';
 @import '../../node_modules/buefy/src/scss/buefy';
-
 
 #app, #app > .columns {
     min-height: 100vh;

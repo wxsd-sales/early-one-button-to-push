@@ -12,7 +12,6 @@
  */
 
 import Vue from 'vue'                               // https://vuejs.org/v2/guide/installation.html
-import VueRouter from 'vue-router'                  // https://router.vuejs.org/installation.html
 import Buefy from 'buefy'                           // https://buefy.org/documentation/start/
 
 require('./bootstrap')
@@ -34,16 +33,10 @@ Vue.component('Login', require('./components/Login.vue').default)
 Vue.component('Dashboard', require('./components/Dashboard.vue').default)
 Vue.component('ExampleComponent', require('./components/ExampleComponent.vue').default)
 
-Vue.use(VueRouter)
-export const router = new VueRouter({
-    mode: 'history',
-    routes: []
-})
-
 Vue.use(Buefy)
+Vue.prototype.Location = window.location
 
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
-    el: '#app',
-    router: router
+    el: '#app'
 })
