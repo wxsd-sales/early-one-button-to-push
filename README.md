@@ -7,13 +7,13 @@ However, this proof-of-concept application lets you set any custom value (in sec
 The target audience for this PoC are individuals who want to have greater control over the timing of the OBTP.
 For example, those who would like to join a meeting on a Webex device more than 15 minutes ahead of the start time.
 
-<!--
+
 <p align="center">
-   <a href="https://www.youtube.com/watch?v=lKNUpkCK6uI&t=87s" target="_blank" alt="See the video demo.">
-       <img src="https://user-images.githubusercontent.com/6129517/144125345-dda6e239-a271-478e-ac41-ac28d74832a6.gif" alt="azure-group-sync-demo"/>
+   <a href="https://www.youtube.com/watch?v==87s" target="_blank" alt="See the video demo.">
+       <img src="https://user-images.githubusercontent.com/6129517/153688689-7d4329e2-bf3a-44e6-9506-5e2904164bbc.gif" alt="early-one-button-to-push-demo"/>
     </a>
 </p>
--->
+
 
 <!-- ⛔️ MD-MAGIC-EXAMPLE:START (TOC:collapse=true&collapseText=Click to expand) -->
 <details>
