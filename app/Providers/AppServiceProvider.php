@@ -24,28 +24,40 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (file_exists(base_path('composer.json'))) {
-            $composer = json_decode(file_get_contents(base_path('composer.json')), true);
+        $inject_config_from_composer = function ($composer_path) {
+            if (file_exists($composer_path)) {
+                $composer = json_decode(file_get_contents($composer_path), true);
+                $fields = ['name', 'description', 'version', 'type', 'keywords'];
 
-            if (!empty($composer)) {
-                Log::info("Injecting additional config from " . base_path('composer.json'));
+                if (empty($composer)) {
+                    return;
+                }
 
-                foreach (['name', 'description', 'version', 'type', 'keywords'] as $field) {
+                Log::info("Injecting additional config from " . $composer_path);
+                foreach ($fields as $field) {
                     if (empty(config("app.$field")) && array_key_exists($field, $composer)) {
                         config(["app.$field" => $composer[$field]]);
                     }
                 }
+
             }
-        }
+        };
 
-        if (file_exists(public_path('mix-manifest.json'))) {
-            $mix_manifest = json_decode(file_get_contents(public_path('mix-manifest.json')), true);
+        $inject_config_from_mix_manifest = function ($mix_manifest_path) {
+            if (file_exists($mix_manifest_path)) {
+                $mix_manifest = json_decode(file_get_contents($mix_manifest_path), true);
 
-            if (!empty($mix_manifest)) {
-                Log::info("Injecting additional config from " . public_path('mix-manifest.json'));
+                if (empty($mix_manifest)) {
+                    return;
+                }
 
+                Log::info("Injecting additional config from " . $mix_manifest_path);
                 config(["app.mix-manifest" => $mix_manifest]);
             }
-        }
+        };
+
+        $inject_config_from_composer(base_path('composer.json'));
+        $inject_config_from_mix_manifest(public_path('mix-manifest.json'));
+
     }
 }
