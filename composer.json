@@ -1,8 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "name": "wxsd/early-one-button-to-push",
     "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "description": "Customize the timing of OBTP on your shared Webex devices.",
+    "keywords": ["webex", "azure", "devices", "xapi", "obtp", "meeting"],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.1",
