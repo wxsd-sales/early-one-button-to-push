@@ -529,5 +529,15 @@ yarn-error.log
 /.idea
 /.vscode
 
+/public/*
+!/public/.htaccess
+!/public/favicon.ico
+!/public/index.php
+!/public/robots.txt
+!/public/web.config
+!/public/images/
+/public/images/*
+!/public/images/favicons
+
 .phpstorm.meta.php
 _ide_helper.php
