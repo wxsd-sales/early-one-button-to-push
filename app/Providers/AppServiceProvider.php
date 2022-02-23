@@ -39,12 +39,12 @@ class AppServiceProvider extends ServiceProvider
         }
 
         if (file_exists(public_path('mix-manifest.json'))) {
-            $mix = json_decode(file_get_contents(public_path('mix-manifest.json')), true);
+            $mix_manifest = json_decode(file_get_contents(public_path('mix-manifest.json')), true);
 
-            if (!empty($mix)) {
+            if (!empty($mix_manifest)) {
                 Log::info("Injecting additional config from " . public_path('mix-manifest.json'));
 
-                config(["app.mix-manifest" => $mix]);
+                config(["app.mix-manifest" => $mix_manifest]);
             }
         }
     }
