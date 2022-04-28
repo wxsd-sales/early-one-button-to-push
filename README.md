@@ -9,7 +9,7 @@ For example, those who would like to join a meeting on a Webex device more than 
 
 
 <p align="center">
-   <a href="https://www.youtube.com/watch?v=saAgLuW8qG4&t=60s" target="_blank" alt="See the video demo.">
+   <a href="https://www.youtube.com/watch?v=saAgLuW8qG4&t=60s" target="_blank">
        <img src="https://user-images.githubusercontent.com/6129517/153689048-50bdce32-03e5-43bf-a142-ec85b43526c8.gif" alt="early-one-button-to-push-demo"/>
     </a>
 </p>
