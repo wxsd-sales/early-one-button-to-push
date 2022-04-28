@@ -1,11 +1,13 @@
 // Fonts
-@import '../../node_modules/@mdi/font/scss/materialdesignicons';
+@import '@mdi/font/scss/materialdesignicons';
 
 // Variables
 @import 'variables';
 
-@import '../../node_modules/bulma/bulma';
-@import '../../node_modules/buefy/src/scss/buefy';
+// Import Bulma and Buefy styles
+@import "~bulma/sass/utilities/_all";
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
 
 #app, #app > .columns {
     min-height: 100vh;
