@@ -192,7 +192,7 @@
     <div class="content has-text-centered">
         <p>
             <strong>{{ config('app.name', 'Laravel') }}</strong>
-            by <a href="https://github.com/WXSD-Sales">WXSD-Sales</a>.<br>
+            by <a href="https://github.com/wxsd-sales">WXSD-Sales</a>.<br>
             &copy; {{ date('Y') }} Webex by Cisco
         </p>
     </div>
