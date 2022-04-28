@@ -62,9 +62,24 @@
                         sortable
                         width="160"
                     >
-                        <div :title="props.row.id">
-                            {{ props.row.id.slice(-7) }}
-                        </div>
+                        <b-field>
+                            <b-input
+                                type="search"
+                                :value="props.row.id"
+                                size="is-small"
+                                rounded
+                                disabled
+                            />
+                            <p class="control">
+                                <b-button
+                                    type="is-link is-light"
+                                    icon-right="content-copy"
+                                    size="is-small"
+                                    rounded
+                                    @click="copyToClipBoard(props.row.id)"
+                                />
+                            </p>
+                        </b-field>
                     </b-table-column>
                     <b-table-column
                         v-slot="props"
@@ -87,9 +102,24 @@
                         searchable
                         sortable
                     >
-                        <div :title="props.row.placeId">
-                            {{ props.row.placeId.slice(-7) }}
-                        </div>
+                        <b-field>
+                            <b-input
+                                type="search"
+                                :value="props.row.placeId"
+                                size="is-small"
+                                rounded
+                                disabled
+                            />
+                            <p class="control">
+                                <b-button
+                                    type="is-link is-light"
+                                    icon-right="content-copy"
+                                    size="is-small"
+                                    rounded
+                                    @click="copyToClipBoard(props.row.placeId)"
+                                />
+                            </p>
+                        </b-field>
                     </b-table-column>
                     <b-table-column
                         v-slot="props"
@@ -252,6 +282,15 @@ export default {
         this.loadTable()
     },
     methods: {
+        copyToClipBoard (content) {
+            navigator.clipboard.writeText(content)
+            this.$buefy.toast.open({
+                duration: 1000,
+                message: 'Copied contents to clipboard!',
+                position: 'is-top',
+                type: 'is-success'
+            })
+        },
         showAddMappingModal (deviceRow = null) {
             this.$buefy.modal.open({
                 parent: this,
