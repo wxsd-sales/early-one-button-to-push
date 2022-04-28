@@ -75,6 +75,7 @@
                         sortable
                     >
                         <a
+                            class="is-wrap-anywhere"
                             :href="'mailto:' + props.row.userEmail"
                         >{{ props.row.userEmail }}</a>
                     </b-table-column>
@@ -134,6 +135,7 @@
                         sortable
                     >
                         <a
+                            class="is-wrap-anywhere"
                             :href="'webexteams://meet?sip=' + props.row.primarySipUrl"
                         >{{ props.row.primarySipUrl }}</a>
                     </b-table-column>
@@ -382,5 +384,7 @@ export default {
 </script>
 
 <style scoped>
-
+.is-wrap-anywhere{
+    overflow-wrap: anywhere;
+}
 </style>
