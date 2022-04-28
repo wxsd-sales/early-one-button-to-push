@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Log;
+use Illuminate\Support\Facades\Log;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -58,6 +58,5 @@ class AppServiceProvider extends ServiceProvider
 
         $inject_config_from_composer(base_path('composer.json'));
         $inject_config_from_mix_manifest(public_path('mix-manifest.json'));
-
     }
 }

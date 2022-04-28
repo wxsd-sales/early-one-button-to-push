@@ -5,12 +5,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 import Vue from 'vue'                               // https://vuejs.org/v2/guide/installation.html
 import Buefy from 'buefy'                           // https://buefy.org/documentation/start/
 
@@ -35,6 +29,13 @@ Vue.component('ExampleComponent', require('./components/ExampleComponent.vue').d
 
 Vue.use(Buefy)
 Vue.prototype.Location = window.location
+
+// noinspection JSUnusedLocalSymbols
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
 // eslint-disable-next-line no-unused-vars
 const app = new Vue({
