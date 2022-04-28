@@ -3,7 +3,7 @@
         <auth-hero />
         <div class="columns is-centered is-multiline is-mobile my-1 py-6">
             <div class="column is-four-fifths">
-                <div class="columns is-vcentered is-mobile">
+                <div class="columns is-vcentered">
                     <div class="column is-three-fifths has-text-centered-mobile is-subtitle">
                         <p>{{ syncStatus }}</p>
                     </div>
