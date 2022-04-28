@@ -10,9 +10,7 @@ class Meeting extends Model
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
+     * {@inheritdoc}
      */
     protected $fillable = [
         'calender_id',
@@ -25,9 +23,7 @@ class Meeting extends Model
     ];
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array
+     * {@inheritdoc}
      */
     protected $casts = [
         'start' => 'datetime',

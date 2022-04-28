@@ -9,8 +9,16 @@ class Device extends Model
 {
     use HasFactory;
 
+    /**
+     * {@inheritdoc}
+     */
     public $incrementing = false;
+
+    /**
+     * {@inheritdoc}
+     */
     protected $keyType = 'string';
+
     /**
      * {@inheritdoc}
      */

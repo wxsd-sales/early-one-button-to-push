@@ -10,27 +10,22 @@ class Setting extends Model
     use HasFactory;
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
+     * {@inheritdoc}
      */
     public $incrementing = false;
+
     /**
-     * The primary key for the model.
-     *
-     * @var string
+     * {@inheritdoc}
      */
     protected $primaryKey = 'key';
+
     /**
-     * The "type" of the primary key ID.
-     *
-     * @var string
+     * {@inheritdoc}
      */
     protected $keyType = 'string';
+
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var string[]
+     * {@inheritdoc}
      */
     protected $fillable = [
         'key',
@@ -38,9 +33,7 @@ class Setting extends Model
     ];
 
     /**
-     * The attributes that should be cast.
-     *
-     * @var array
+     * {@inheritdoc}
      */
     protected $casts = [
         'value' => 'array',
