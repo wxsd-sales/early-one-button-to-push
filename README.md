@@ -43,7 +43,8 @@ These instructions assume that you have:
 - Set the target devices as [shared devices](https://help.webex.com/en-US/article/1mqb9cb/Add-Shared-Devices-and-Services-to-a-Workspace).
 - [Docker installed](https://docs.docker.com/engine/install/) and running on a Windows (via WSL2), macOS, or Linux machine.
 
-Open a new terminal window and follow the instructions below.
+Open a new terminal window and follow the instructions below to setup the project locally for 
+development/demo.
 
 1. Clone this repository and change directory
    ```
@@ -57,7 +58,6 @@ Open a new terminal window and follow the instructions below.
 
 3. Review and follow the [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) guide.
     - Select the following [Microsoft Graph API permissions](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#delegated-permission-to-microsoft-graph):
-   
       | API / Permissions name | Type      | Description                                         |
       |------------------------|-----------|-----------------------------------------------------|
       | Calendars.Read         | Delegated | Read user calendars                                 |
@@ -85,7 +85,7 @@ Open a new terminal window and follow the instructions below.
     composer install --ignore-platform-reqs
    ```
 
-6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/8.x/sail):
+6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/9.x/sail):
    ```
    ./vendor/bin/sail up -d
    ```
@@ -100,19 +100,19 @@ Open a new terminal window and follow the instructions below.
    ./vendor/bin/sail npm install
    ```
 
-9. Run [Laravel Mix](https://laravel.com/docs/8.x/mix)  
+9. Run [Laravel Mix](https://laravel.com/docs/9.x/mix)  
    When you run this command, the application's CSS and JavaScript assets will be compiled and placed in the application's public directory:
    ```
    ./vendor/bin/sail npm run dev
    ```
 
-10. Run the Scheduler locally  
+10. Run the Scheduler locally (Optional)  
     This command will run in the foreground and invoke the scheduler every minute until you terminate the command. In a new terminal window:
     ```
     ./vendor/bin/sail php artisan schedule:work
     ```
 
-11. Run the Queue Worker  
+11. Run the Queue Worker (Optional)  
     Start a queue worker and process new jobs as they are pushed onto the queue. This command will continue to run until it is manually stopped or you close your terminal. In a new terminal window:
     ```
     ./vendor/bin/sail php artisan queue:work
