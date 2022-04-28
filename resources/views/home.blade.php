@@ -50,8 +50,8 @@
                     </example-component>
 {{--                    <div class="control">--}}
 {{--                        <label>--}}
-{{--                                <textarea class="textarea" placeholder="XSRF-TOKEN"--}}
-{{--                                          readonly>{{ Cookie::get('XSRF-TOKEN') }}</textarea>--}}
+{{--                            <textarea class="textarea" placeholder="XSRF-TOKEN"--}}
+{{--                                      readonly>{{ Cookie::get('XSRF-TOKEN') }}</textarea>--}}
 {{--                        </label>--}}
 {{--                    </div>--}}
                 </div>
