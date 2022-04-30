@@ -75,7 +75,7 @@ development/demo.
     - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` and `WEBEX_BOT_TOKEN` environment variables within the `.env` file respectively. 
     - You will also need to add this bot to all shared device that you wish to use. To do this, sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit API Access > Search for your bot and grant 'Full Access'.
 
-5. Install Composer dependencies for the application
+5. Install Composer dependencies for the application:
    ```
    docker run --rm \
     -u "$(id -u):$(id -g)" \
