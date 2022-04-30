@@ -46,17 +46,17 @@ These instructions assume that you have:
 Open a new terminal window and follow the instructions below to setup the project locally for 
 development/demo.
 
-1. Clone this repository and change directory
+1. Clone this repository and change directory:
    ```
    git clone https://github.com/WXSD-Sales/early-one-button-to-push && cd early-one-button-to-push
    ```
 
-2. Rename `.env.local` file to `.env` (you may also change your database credentials within this renamed file)
+2. Rename `.env.local` file to `.env` (you may also change the database credentials within this renamed file):
    ```
    mv .env.local .env
    ```
 
-3. Review and follow the [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) guide
+3. Review and follow the [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) guide.
     - Select the following [Microsoft Graph API permissions](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#delegated-permission-to-microsoft-graph):
       | API / Permissions name | Type      | Description                                         |
       |------------------------|-----------|-----------------------------------------------------|
@@ -71,7 +71,7 @@ development/demo.
         - `http://localhost/auth/azure/callback`
     - Take note of your [Azure Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant), Application ID and, Client Secret. Assign these values to the `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET` environment variables within the `.env` file respectively.
 
-4. Review and follow the [Creating a Webex Bot](https://developer.webex.com/docs/bots#creating-a-webex-bot) guide to create a Webex Bot
+4. Review and follow the [Creating a Webex Bot](https://developer.webex.com/docs/bots#creating-a-webex-bot) guide to create a Webex Bot.
     - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` and `WEBEX_BOT_TOKEN` environment variables within the `.env` file respectively. 
     - You will also need to add this bot to all shared device that you wish to use. To do this, sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit API Access > Search for your bot and grant 'Full Access'.
 
@@ -85,27 +85,27 @@ development/demo.
     composer install --ignore-platform-reqs
    ```
 
-6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/9.x/sail)
+6. Start the Docker development environment via [Laravel Sail](https://laravel.com/docs/9.x/sail):
    ```
    ./vendor/bin/sail up -d
    ```
 
-7. Generate the [application key](https://laravel.com/docs/9.x/encryption#configuration)
+7. Generate the [application key](https://laravel.com/docs/9.x/encryption#configuration):
    ```
    ./vendor/bin/sail php artisan key:generate
    ```
 
-8. Initialize the database for the application
+8. Initialize the database for the application:
    ```
    ./vendor/bin/sail php artisan migrate:fresh
    ```
 
-9. Install NPM dependencies for the application
+9. Install NPM dependencies for the application:
    ```
    ./vendor/bin/sail npm install
    ```
 
-10. Run [Laravel Mix](https://laravel.com/docs/9.x/mix#running-mix)
+10. Run [Laravel Mix](https://laravel.com/docs/9.x/mix#running-mix):
     ```
     ./vendor/bin/sail npm run dev
     ```
