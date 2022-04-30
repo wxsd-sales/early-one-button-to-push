@@ -95,7 +95,7 @@ development/demo.
    ./vendor/bin/sail php artisan key:generate
    ```
 
-8. Initialize the database for the application:
+8. Initialize the [database for the application](https://laravel.com/docs/9.x/migrations#drop-all-tables-migrate):
    ```
    ./vendor/bin/sail php artisan migrate:fresh
    ```
