@@ -30,7 +30,8 @@ For example, those who would like to join a meeting on a Webex device more than 
 ## Overview
 At it's core, the application is a collection of background processes that run on a predefined schedule.
 
-These processes, collectively, retrieve a user's calendar events and create corresponding bookings for those on devices that are mapped to the user.
+These processes, collectively, retrieve a user's calendar events and create corresponding 
+bookings for those on devices that are mapped to the user.
 
 The front end serves as a way to "map" or "unmap" calendar accounts to shared devices. 
 All bookings are done via a bot account that has admin privileges to the shared devices (on Webex Control Hub).
@@ -70,11 +71,17 @@ development/demo.
     - Use these [Redirect URIs](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#add-a-redirect-uri):
         - `https://localhost/auth/azure/callback`
         - `http://localhost/auth/azure/callback`
-    - Take note of your [Azure Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant), Application ID and, Client Secret. Assign these values to the `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET` environment variables within the `.env` file respectively.
+    - Take note of your [Azure Tenant ID](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-to-find-tenant), 
+      Application ID and, Client Secret. Assign these values to the `AZURE_TENANT_ID`, 
+      `AZURE_CLIENT_ID`, and `AZURE_CLIENT_SECRET` environment variables within the `.env.local` 
+      file respectively.
 
 4. Review and follow the [Creating a Webex Bot](https://developer.webex.com/docs/bots#creating-a-webex-bot) guide to create a Webex Bot.
-    - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` and `WEBEX_BOT_TOKEN` environment variables within the `.env` file respectively. 
-    - You will also need to add this bot to all shared device that you wish to use. To do this, sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit API Access > Search for your bot and grant 'Full Access'.
+    - Take note of your Bot ID and Bot access token. Assign these values to the `WEBEX_BOT_ID` 
+      and `WEBEX_BOT_TOKEN` environment variables within the `.env.local` file respectively. 
+    - You will also need to add this bot to all shared device that you wish to use. To do this, 
+      sign in to Webex Control Hub (admin.webex.com) > Workspaces > Your Workspace Name > Edit 
+      API Access > Search for your bot and grant 'Full Access'.
 
 5. [Install Composer dependencies for the application](https://laravel.com/docs/9.x/sail#installing-composer-dependencies-for-existing-projects):
    ```
@@ -111,7 +118,8 @@ development/demo.
     ./vendor/bin/sail npm run dev
     ```
 
-Lastly, navigate to `http://localhost` in your browser to complete the setup (you will be asked to login to Azure) by mapping devices to calendar accounts. To exit, execute `./vendor/bin/sail down` on the termainal.
+Lastly, navigate to `http://localhost` in your browser to complete the setup by mapping devices 
+to calendar accounts. To stop, execute `./vendor/bin/sail down` on the terminal.
 
 
 ## Demo
