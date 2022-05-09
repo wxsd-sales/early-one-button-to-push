@@ -51,9 +51,10 @@ development/demo.
    git clone https://github.com/WXSD-Sales/early-one-button-to-push && cd early-one-button-to-push
    ```
 
-2. Rename `.env.local` file to `.env` (you may also change the database credentials within this renamed file):
+2. Copy `.env.local.example` file as `.env.local` (you may also change the database credentials 
+   within this new file):
    ```
-   mv .env.local .env
+   cp .env.local.example .env.local
    ```
 
 3. Review and follow the [Quickstart: Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app#register-an-application) guide.
