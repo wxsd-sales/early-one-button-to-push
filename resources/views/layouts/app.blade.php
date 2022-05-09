@@ -230,8 +230,10 @@
         }
     })
 </script>
-@if(config('app.mix-manifest')['/js/manifest.js'] ?? null && config('app.mix-manifest')['/js/vendor.js'] ?? null)
+@if(config('app.mix-manifest')['/js/manifest.js'] ?? null)
     <script src="{{ mix('/js/manifest.js') }}" defer></script>
+@endif
+@if(config('app.mix-manifest')['/js/vendor.js'] ?? null)
     <script src="{{ mix('/js/vendor.js') }}" defer></script>
 @endif
 <script src="{{ mix('/js/app.js') }}" defer></script>
