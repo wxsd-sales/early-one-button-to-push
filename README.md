@@ -2,15 +2,16 @@ Early One Button to Push
 ========================
 **Customize the timing of OBTP on your shared Webex devices.**
 
-Conventionally, you can configure the OBTP to show up 5 minutes before the meeting time at an organizational level (via. Webex Control Hub settings).
-However, this proof-of-concept application lets you set any custom value (in seconds) for the OBTP to appear, that too at a device level.
-The target audience for this PoC are individuals who want to have greater control over the timing of the OBTP.
-For example, those who would like to join a meeting on a Webex device more than 15 minutes ahead of the start time.
+Conventionally, you can configure the [OBTP](https://help.webex.com/en-us/article/gmi931/Overview-of-One-Button-to-Push-(OBTP)) to show up 5 minutes before the meeting time at an organizational level (via. Webex Control Hub settings).
+However, this proof-of-concept application lets you set any custom value (in seconds) for the OBTP to appear, that too at a device level. For example:
+> Your organization has a shared Webex device in a large conference room. You find that 5 minutes isn't sufficient for your team to settle in and start the meeting. With this PoC, you can configure the OBTP to appear 30 minutes before the meeting start time on that specific device. This ensures everyone has ample time to join and prepare for the meeting, resulting in a smoother and more efficient start.
+
+The target audience for this PoC are individuals or teams who want to have greater control over the timing of the OBTP. This PoC support any type of room booking, regardless of what platform ([Webex](https://www.webex.com/), [Google Meet](https://workspace.google.com/products/meet/), [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams), [Zoom](https://zoom.us/)) they are tied to.
 
 
 <p align="center">
-   <a href="https://www.youtube.com/watch?v=saAgLuW8qG4&t=60s" target="_blank">
-       <img src="https://user-images.githubusercontent.com/6129517/153689048-50bdce32-03e5-43bf-a142-ec85b43526c8.gif" alt="early-one-button-to-push-demo"/>
+   <a href="https://app.vidcast.io/share/cef825db-f4e2-42b5-a686-25b5e14ea4e3" target="_blank">
+       <img src="https://github.com/wxsd-sales/early-one-button-to-push/assets/6129517/753746c3-6236-49af-a10a-677a1498afeb" alt="early-one-button-to-push-demo"/>
     </a>
 </p>
 
@@ -19,10 +20,12 @@ For example, those who would like to join a meeting on a Webex device more than 
 <details>
 <summary>Table of Contents (click to expand)</summary>
 
-* [Overview](#overview)
-* [Setup](#setup)
-* [Demo](#demo)
-* [Support](#support)
+  * [Overview](#overview)
+  * [Setup](#setup)
+  * [Demo](#demo)
+  * [Disclaimer](#disclaimer)
+  * [License](#license)
+  * [Support](#support)
 
 </details>
 <!-- ⛔️ MD-MAGIC-EXAMPLE:END -->
@@ -123,8 +126,18 @@ to calendar accounts. To stop, execute `./vendor/bin/sail down` on the terminal.
 
 ## Demo
 
-A video where I demo this PoC is available on YouTube — https://www.youtube.com/watch?v=saAgLuW8qG4&t=60s.
+A video where I demo this PoC is available on Vidcast — [https://app.vidcast.io/share/cef825db-f4e2-42b5-a686-25b5e14ea4e3](https://app.vidcast.io/share/cef825db-f4e2-42b5-a686-25b5e14ea4e3)
+and Youtube — [https://youtu.be/saAgLuW8qG4&t=60s](https://youtu.be/saAgLuW8qG4&t=60s).
 
+## Disclaimer
+
+Everything included in this repository is for demo and Proof of Concept (PoC) purposes only. Use of the PoC is solely
+at your own risk. This project may contain links to external content, which we do not warrant, endorse, or assume
+liability for. This project is for Cisco Webex use-case, but is not official Cisco Webex branded project.
+
+## License
+
+[MIT](./LICENSE)
 
 ## Support
 
